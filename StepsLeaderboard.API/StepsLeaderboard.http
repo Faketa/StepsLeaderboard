@@ -1,0 +1,6 @@
+@StepsLeaderboard_HostAddress = http://localhost:5011
+
+GET {{StepsLeaderboard_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
