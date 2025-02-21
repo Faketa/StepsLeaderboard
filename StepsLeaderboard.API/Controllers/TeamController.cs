@@ -10,6 +10,9 @@ using StepsLeaderboard.Application.Features.Counters.Queries;
 
 namespace StepsLeaderboard.API.Controllers;
 
+/// <summary>
+/// API Controller for managing Teams.
+/// </summary>
 [ApiController]
 [Route("api/teams")]
 public class TeamController : ControllerBase
@@ -17,12 +20,22 @@ public class TeamController : ControllerBase
     private readonly IMediator _mediator;
     private readonly ILogger<TeamController> _logger;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="TeamController"/> class.
+    /// </summary>
+    /// <param name="mediator">Mediator instance.</param>
+    /// <param name="logger">Logger instance.</param>
     public TeamController(IMediator mediator, ILogger<TeamController> logger)
     {
         _mediator = mediator;
         _logger = logger;
     }
 
+    /// <summary>
+    /// Creates a new Team.
+    /// </summary>
+    /// <param name="request">The Team creation request.</param>
+    /// <returns>The created Team.</returns>
     [HttpPost]
     public async Task<IActionResult> CreateTeam([FromBody] CreateTeamCommand request)
     {
@@ -31,6 +44,11 @@ public class TeamController : ControllerBase
         return CreatedAtAction(nameof(GetTeamById), new { id = team.Id }, team);
     }
 
+    /// <summary>
+    /// Retrieves a Team by ID.
+    /// </summary>
+    /// <param name="id">The ID of the Team.</param>
+    /// <returns>The requested Team.</returns>
     [HttpGet("{id}")]
     public async Task<IActionResult> GetTeamById(Guid id)
     {
@@ -46,6 +64,10 @@ public class TeamController : ControllerBase
         return Ok(team);
     }
 
+    /// <summary>
+    /// Retrieves all Teams.
+    /// </summary>
+    /// <returns>List of Teams.</returns>
     [HttpGet]
     public async Task<IActionResult> GetAllTeams()
     {
@@ -54,22 +76,10 @@ public class TeamController : ControllerBase
         return Ok(teams);
     }
 
-    [HttpGet("team/{id}")]
-    public async Task<IActionResult> GetCountersByTeam(Guid id)
-    {
-        _logger.LogInformation("Fetching all counters for team ID: {TeamId}", id);
-        var counters = await _mediator.Send(new GetCountersByTeamQuery(id));
-        return Ok(counters);
-    }
-
-    [HttpGet("{id}/total-steps")]
-    public async Task<IActionResult> GetTotalStepsByTeam(Guid id)
-    {
-        _logger.LogInformation("Fetching total steps for team ID: {TeamId}", id);
-        var totalSteps = await _mediator.Send(new GetTotalStepsByTeamQuery(id));
-        return Ok(totalSteps);
-    }
-
+    /// <summary>
+    /// Deletes a Team.
+    /// </summary>
+    /// <param name="id">The ID of the Team to delete.</param>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteTeam(Guid id)
     {

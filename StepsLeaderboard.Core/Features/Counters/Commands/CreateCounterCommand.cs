@@ -1,5 +1,14 @@
-﻿namespace StepsLeaderboard.Application.Features.Counters.Commands;
-using MediatR;
+﻿using MediatR;
 using StepsLeaderboard.Application.Features.Counters.DTOs;
+using System.Text.Json.Serialization;
 
-public record CreateCounterCommand(string Name, Guid TeamId) : IRequest<CounterDto>;
+namespace StepsLeaderboard.Application.Features.Counters.Commands;
+
+/// <summary>
+/// Represents a command to create a new Counter.
+/// </summary>
+public record CreateCounterCommand(Guid Id, string Name, Guid TeamId) : IRequest<CounterDto>
+{
+    [JsonIgnore]
+    public Guid Id { get; init; } = Guid.NewGuid();
+}

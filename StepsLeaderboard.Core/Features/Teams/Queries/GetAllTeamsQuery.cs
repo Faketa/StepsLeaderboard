@@ -4,4 +4,7 @@ using System.Collections.Generic;
 
 namespace StepsLeaderboard.Application.Features.Teams.Queries;
 
-public record GetAllTeamsQuery() : IRequest<List<TeamDto>>;
+/// <summary>
+/// Represents a query to retrieve all Teams, including their total step count.
+/// </summary>
+public record GetAllTeamsQuery() : IRequest<List<TeamSummaryDto>>;

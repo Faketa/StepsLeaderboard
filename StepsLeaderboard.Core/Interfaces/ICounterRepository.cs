@@ -5,13 +5,16 @@ using System.Threading.Tasks;
 
 namespace StepsLeaderboard.Application.Interfaces;
 
+/// <summary>
+/// Defines repository methods for managing Counters.
+/// </summary>
 public interface ICounterRepository
 {
     /// <summary>
-    /// Adds a new counter to the repository.
+    /// Adds a new Counter to the repository.
     /// </summary>
-    /// <param name="counter">The counter entity to add.</param>
-    /// <returns>The created counter entity.</returns>
+    /// <param name="counter">The Counter entity to add.</param>
+    /// <returns>The created Counter entity.</returns>
     Task<Counter> AddCounter(Counter counter);
 
     /// <summary>

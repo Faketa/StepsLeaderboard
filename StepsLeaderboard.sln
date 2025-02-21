@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StepsLeaderboard.Domain", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StepsLeaderboard.Infrastructure", "StepsLeaderboard.Infrastructure\StepsLeaderboard.Infrastructure.csproj", "{06CC6254-2A9E-4215-9B3A-4C58F6552E6A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StepsLeaderboard.Test", "StepsLeaderboard.Test\StepsLeaderboard.Test.csproj", "{85D6AF27-0A87-4191-8D2A-48FCBC1E5ED5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{06CC6254-2A9E-4215-9B3A-4C58F6552E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06CC6254-2A9E-4215-9B3A-4C58F6552E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06CC6254-2A9E-4215-9B3A-4C58F6552E6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85D6AF27-0A87-4191-8D2A-48FCBC1E5ED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85D6AF27-0A87-4191-8D2A-48FCBC1E5ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85D6AF27-0A87-4191-8D2A-48FCBC1E5ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85D6AF27-0A87-4191-8D2A-48FCBC1E5ED5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
