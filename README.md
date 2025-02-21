@@ -48,7 +48,6 @@ The project has been published on **Microsoft Azure** and can be accessed via th
 | **POST** | `/api/counters` | Create a new Counter |
 | **GET** | `/api/counters/{id}` | Get a Counter by ID |
 | **PATCH** | `/api/counters/{id}` | Update Counter steps |
-| **GET** | `/api/counters/team/{teamId}` | List all Counters in a Team |
 | **DELETE** | `/api/counters/{id}` | Delete a Counter |
 
 ### **Teams API**
