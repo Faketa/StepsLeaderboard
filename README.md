@@ -40,14 +40,35 @@ The project has been published on **Microsoft Azure** and can be accessed via th
 
 ---
 
+## **📌 Available API Endpoints**
+
+### **Counters API**
+| Method | Endpoint | Description |
+|--------|---------|-------------|
+| **POST** | `/api/counters` | Create a new Counter |
+| **GET** | `/api/counters/{id}` | Get a Counter by ID |
+| **PATCH** | `/api/counters/{id}` | Update Counter steps |
+| **GET** | `/api/counters/team/{teamId}` | List all Counters in a Team |
+| **DELETE** | `/api/counters/{id}` | Delete a Counter |
+
+### **Teams API**
+| Method | Endpoint | Description |
+|--------|---------|-------------|
+| **POST** | `/api/teams` | Create a new Team |
+| **GET** | `/api/teams` | List all Teams |
+| **GET** | `/api/teams/{id}` | Get a Team by ID (includes total steps & counters) |
+| **DELETE** | `/api/teams/{id}` | Delete a Team |
+
+---
+
 ## **📌 Project Structure**
 ```
 StepsLeaderboard/
-│── 📁 StepsLeaderboard.API/          # ASP.NET Web API (Controllers, Middlewares)
-│── 📁 StepsLeaderboard.Application/  # Business logic (CQRS, Validators, DTOs)
-│── 📁 StepsLeaderboard.Domain/       # Entities & Core Domain logic
+│── 📁 StepsLeaderboard.API/            # ASP.NET Web API (Controllers, Middlewares)
+│── 📁 StepsLeaderboard.Application/    # Business logic (CQRS, Validators, DTOs)
+│── 📁 StepsLeaderboard.Domain/         # Entities & Core Domain logic
 │── 📁 StepsLeaderboard.Infrastructure/ # Data persistence (Repositories)
-│── 📁 StepsLeaderboard.Tests/        # NUnit test project
+│── 📁 StepsLeaderboard.Tests/          # NUnit test project
 ```
 
 ✔ **Follows Clean Architecture**: API layer **depends on Application**, but **Application does NOT depend on API**.  
@@ -57,45 +78,9 @@ StepsLeaderboard/
 
 ---
 
-## **📌 How to Run the Project**
-### **1️⃣ Install .NET 8**
-Ensure **.NET 8 SDK** is installed:
-```sh
-dotnet --version
-```
-If not installed, download it from:  
-🔗 [Download .NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
-
----
-
-### **2️⃣ Clone the Repository**
-```sh
-git clone https://github.com/your-repo/StepsLeaderboard.git
-cd StepsLeaderboard
-```
-
----
-
-### **3️⃣ Restore Dependencies**
-```sh
-dotnet restore
-```
-
----
-
-### **4️⃣ Run the Application**
-```sh
-dotnet run --project StepsLeaderboard.API
-```
-
-The API should now be running on:  
-**http://localhost:5000**
-
----
-
 ## **📌 Using Swagger UI**
 📌 **Swagger UI** is available at:  
-🔗 [http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html)
+🔗 [http://localhost:7293/swagger/index.html](http://localhost:7293/swagger/index.html)
 
 Swagger allows **testing API endpoints interactively**.
 
@@ -111,10 +96,6 @@ Unit tests are written in **NUnit** and **Moq**.
 📌 **Run tests:**
 ```sh
 dotnet test
-```
-📌 **Expected Output:**
-```
-Passed! - 10 tests run
 ```
 
 ---
